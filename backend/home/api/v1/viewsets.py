@@ -1,3 +1,14 @@
+from rest_framework import viewsets
+from home.models import SDjbdsj, Smala, SDjbdsj, Smala, SDjbdsj, Smala
+from .serializers import (
+    SDjbdsjSerializer,
+    SmalaSerializer,
+    SDjbdsjSerializer,
+    SmalaSerializer,
+    SDjbdsjSerializer,
+    SmalaSerializer,
+)
+from rest_framework import authentication
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 from rest_framework.viewsets import ModelViewSet, ViewSet
 from rest_framework.authtoken.models import Token
@@ -28,3 +39,21 @@ class LoginViewSet(ViewSet):
         token, created = Token.objects.get_or_create(user=user)
         user_serializer = UserSerializer(user)
         return Response({"token": token.key, "user": user_serializer.data})
+
+
+class SDjbdsjViewSet(viewsets.ModelViewSet):
+    serializer_class = SDjbdsjSerializer
+    authentication_classes = (
+        authentication.SessionAuthentication,
+        authentication.TokenAuthentication,
+    )
+    queryset = SDjbdsj.objects.all()
+
+
+class SmalaViewSet(viewsets.ModelViewSet):
+    serializer_class = SmalaSerializer
+    authentication_classes = (
+        authentication.SessionAuthentication,
+        authentication.TokenAuthentication,
+    )
+    queryset = Smala.objects.all()
