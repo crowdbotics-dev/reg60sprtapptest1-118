@@ -11,8 +11,44 @@ function api_docs_schema_retrieve(payload) {
 function api_v1_login_create(payload) {
   return regsprtapptestAPI.post(`/api/v1/login/`, payload)
 }
+function api_v1_sdjbdsj_list(payload) {
+  return regsprtapptestAPI.get(`/api/v1/sdjbdsj/`)
+}
+function api_v1_sdjbdsj_create(payload) {
+  return regsprtapptestAPI.post(`/api/v1/sdjbdsj/`, payload)
+}
+function api_v1_sdjbdsj_retrieve(payload) {
+  return regsprtapptestAPI.get(`/api/v1/sdjbdsj/${payload.id}/`)
+}
+function api_v1_sdjbdsj_update(payload) {
+  return regsprtapptestAPI.put(`/api/v1/sdjbdsj/${payload.id}/`, payload)
+}
+function api_v1_sdjbdsj_partial_update(payload) {
+  return regsprtapptestAPI.patch(`/api/v1/sdjbdsj/${payload.id}/`, payload)
+}
+function api_v1_sdjbdsj_destroy(payload) {
+  return regsprtapptestAPI.delete(`/api/v1/sdjbdsj/${payload.id}/`)
+}
 function api_v1_signup_create(payload) {
   return regsprtapptestAPI.post(`/api/v1/signup/`, payload)
+}
+function api_v1_smala_list(payload) {
+  return regsprtapptestAPI.get(`/api/v1/smala/`)
+}
+function api_v1_smala_create(payload) {
+  return regsprtapptestAPI.post(`/api/v1/smala/`, payload)
+}
+function api_v1_smala_retrieve(payload) {
+  return regsprtapptestAPI.get(`/api/v1/smala/${payload.id}/`)
+}
+function api_v1_smala_update(payload) {
+  return regsprtapptestAPI.put(`/api/v1/smala/${payload.id}/`, payload)
+}
+function api_v1_smala_partial_update(payload) {
+  return regsprtapptestAPI.patch(`/api/v1/smala/${payload.id}/`, payload)
+}
+function api_v1_smala_destroy(payload) {
+  return regsprtapptestAPI.delete(`/api/v1/smala/${payload.id}/`)
 }
 function rest_auth_login_create(payload) {
   return regsprtapptestAPI.post(`/rest-auth/login/`, payload)
@@ -56,7 +92,19 @@ function rest_auth_user_partial_update(payload) {
 export const apiService = {
   api_docs_schema_retrieve,
   api_v1_login_create,
+  api_v1_sdjbdsj_list,
+  api_v1_sdjbdsj_create,
+  api_v1_sdjbdsj_retrieve,
+  api_v1_sdjbdsj_update,
+  api_v1_sdjbdsj_partial_update,
+  api_v1_sdjbdsj_destroy,
   api_v1_signup_create,
+  api_v1_smala_list,
+  api_v1_smala_create,
+  api_v1_smala_retrieve,
+  api_v1_smala_update,
+  api_v1_smala_partial_update,
+  api_v1_smala_destroy,
   rest_auth_login_create,
   rest_auth_logout_create,
   rest_auth_password_change_create,
